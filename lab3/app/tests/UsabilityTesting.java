@@ -26,7 +26,7 @@ public class UsabilityTesting {
 	public void testUS1() {
 		sistema.setMyPeriod(1);
 
-		Assert.assertEquals(sistema.getTotalCredits(), 0);
+		Assert.assertEquals(sistema.getTotalCredits(), 20);
 		
 		List<String> disciplinas = sistema.getAllocatedDisciplines();
 		List<Disciplina> oraculo = getDisciplinesOfFirstPeriodo();

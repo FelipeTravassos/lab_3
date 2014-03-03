@@ -1,3 +1,8 @@
+/**
+ * CONTROLLER: Is the class responsible for control of periods
+ * 
+ * @author FELIPE
+ */
 package sistema;
 
 import java.util.ArrayList;
@@ -7,16 +12,25 @@ public class Periodo {
 	
 	List<Disciplina> disciplinasDoPeriodo;
 	
-	
+	/**
+	 * Default constructor
+	 */
 	public Periodo() {
 
 	}
 
-	
+	/**
+	 * Set the default period
+	 * @param period: actual period, 1 <=> 8
+	 */
 	public void setPeriod(int period) {
 		loadPeriod(period);
 	}
 
+	/**
+	 * Get total credits of period
+	 * @return int: The sum of the credits for the period
+	 */
 	public int getTotalCreditsOfPeriod() {
 		int retorno = 0;
 		for (Disciplina disciplina : disciplinasDoPeriodo) {
@@ -25,6 +39,10 @@ public class Periodo {
 		return retorno;
 	}
 
+	/**
+	 * Get allocated disciplines of period
+	 * @return List<String> with the ID the all disciplines allocated in actual period
+	 */
 	public List<String> getAllocatedDisciplines() {
 		List<String> retorno = new ArrayList<String>();
 		for (Disciplina disciplina : disciplinasDoPeriodo) {
@@ -33,6 +51,11 @@ public class Periodo {
 		return retorno;
 	}
 
+	/**
+	 * Get name of discipline
+	 * @param id: ID of discipline
+	 * @return name of discipline
+	 */
 	public String getNameDiscipline(String id) {
 		for (int i = 0; i < disciplinasDoPeriodo.size(); i++) {
 			if(disciplinasDoPeriodo.get(i).getID().equals(id)){
