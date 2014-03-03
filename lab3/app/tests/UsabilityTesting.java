@@ -19,9 +19,7 @@ public class UsabilityTesting {
 	
 	@Before
 	public void setUp(){
-		sistema = new Sistema();
-		sistema.loadPeriods();
-		
+		sistema = new Sistema();		
 	}
 	
 	@Test

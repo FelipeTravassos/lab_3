@@ -1,31 +1,29 @@
+/**
+ * CONTROLLER: Is the class responsible for control of system
+ * 
+ * @author FELIPE
+ */
+
 package sistema;
 
 import java.util.List;
 
 public class Sistema {
 
-	Periodo periodoDefault;
+	Periodo periodo;
 	
 	/**
 	 * Default constructor
 	 */
 	public Sistema() {
-		periodoDefault = new Periodo();
-	}
-	
-	/**
-	 * Upload all periods and their respective disciplines
-	 */
-	public void loadPeriods() {
-		// TODO Auto-generated method stub
-		
+		periodo = new Periodo();
 	}
 
 	/**
 	 * set period of the user
 	 */
 	public void setMyPeriod(int period) {
-		periodoDefault.set(period);
+		periodo.setPeriod(period);
 	}
 
 	/**
@@ -33,7 +31,7 @@ public class Sistema {
 	 * @return total credits for the current period
 	 */
 	public int getTotalCredits() {
-		return periodoDefault.getTotalCreditsOfPeriod();
+		return periodo.getTotalCreditsOfPeriod();
 	}
 
 	/**
@@ -41,8 +39,7 @@ public class Sistema {
 	 * @return List of allocated disciplines
 	 */
 	public List<String> getAllocatedDisciplines() {
-		// TODO Auto-generated method stub
-		return null;
+		return periodo.getAllocatedDisciplines();
 	}
 
 	/**
@@ -50,9 +47,8 @@ public class Sistema {
 	 * @param string: ID of discipline
 	 * @return Name of discipline
 	 */
-	public String getNameDiscipline(String string) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getNameDiscipline(String id) {
+		return periodo.getNameDiscipline(id);
 	}
 
 	/**
@@ -60,9 +56,8 @@ public class Sistema {
 	 * @param string: ID of discipline
 	 * @return credits of discipline
 	 */
-	public int getCreditsDiscipline(String string) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getCreditsDiscipline(String id) {
+		return periodo.getCreditsDiscipline(id);
 	}
 
 }
