@@ -68,6 +68,18 @@ public class Plano {
 		}
 		
 	}
+
+	/**
+	 * 
+	 * @param ID: Id of the discipline
+	 * @param period: period that will remove the discipline
+	 */
+	public void removeDisciplineOfPeriod(String ID, int period) {
+		if(listPeriodos.size() >= period && period > 1){
+			listPeriodos.get(period-1).removeDiscipline(ID);
+			removeDisciplineWithThisPrerequisites(ID, period);
+		}
+	}
 	
 	/**
 	 * get All Disciplines
@@ -167,6 +179,16 @@ public class Plano {
 			
 		}
 		return false;
+	}
+	
+	private void removeDisciplineWithThisPrerequisites(String ID, int period) {
+		if(listPeriodos.size() > period){
+			List<String> disciplinasComPrerequisito = listPeriodos.get(period).getDisciplinesWithPrerequisite(ID);
+			for (String disciplina : disciplinasComPrerequisito) {
+				removeDisciplineOfPeriod(disciplina, period+1);
+			}
+			removeDisciplineWithThisPrerequisites(ID, ++period);
+		}
 	}
 
 }

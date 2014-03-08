@@ -207,7 +207,59 @@ public class UsabilityTesting {
 	
 	@Test
 	public void testUS4(){
+		Assert.assertEquals(0, sistema.getTotalCredits(2));
+
+		List<Disciplina> segundo = new ArrayList<Disciplina>();
 		
+
+		try {
+			sistema.addDisciplineInPeriod("Cálculo 2", 2);
+			segundo.add(new Disciplina("Cálculo 2", 4, new String[]{"Cálculo 1"}));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Assert.assertEquals(4, sistema.getTotalCredits(2));
+		
+		sistema.removeDisciplineOfPeriod("Cálculo 2", 2);
+		Assert.assertEquals(0, sistema.getTotalCredits(2));
+		
+		Assert.assertEquals(20, sistema.getTotalCredits(1));
+		
+		sistema.removeDisciplineOfPeriod("Cálculo 1", 2);
+		Assert.assertEquals(20, sistema.getTotalCredits(1));
+		
+		try {
+			sistema.addDisciplineInPeriod("Programação 2", 2);
+			sistema.addDisciplineInPeriod("Cálculo 2", 2);
+			sistema.addDisciplineInPeriod("Fisica clássica", 2);
+			sistema.addDisciplineInPeriod("Teoria dos grafos", 2);
+			sistema.addDisciplineInPeriod("Laboratório de Programação 2", 2);
+			sistema.addDisciplineInPeriod("EDA", 3);
+			sistema.addDisciplineInPeriod("LEDA", 3);
+			sistema.addDisciplineInPeriod("Fisica moderna", 3);
+			sistema.addDisciplineInPeriod("LOAC", 4);
+			sistema.addDisciplineInPeriod("OAC", 4);
+			sistema.addDisciplineInPeriod("Rede de computadores", 5);
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Assert.assertEquals(18, sistema.getTotalCredits(2));
+		Assert.assertEquals(12, sistema.getTotalCredits(3));
+		Assert.assertEquals(8, sistema.getTotalCredits(4));
+		Assert.assertEquals(4, sistema.getTotalCredits(5));
+
+		sistema.removeDisciplineOfPeriod("Programação 2", 2);
+
+		Assert.assertEquals(14, sistema.getTotalCredits(2));
+		Assert.assertEquals(4, sistema.getTotalCredits(3));
+		Assert.assertEquals(0, sistema.getTotalCredits(4));
+		Assert.assertEquals(0, sistema.getTotalCredits(5));
+
 	}
 	
 	private List<Disciplina> getDisciplinesOfFirstPeriodo(){

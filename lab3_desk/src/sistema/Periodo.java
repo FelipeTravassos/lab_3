@@ -102,8 +102,38 @@ public class Periodo {
 			throw new Exception("Não é possível incluir disciplinas de forma a ter mais de 28 créditos alocados no período.");
 		}
 	}
-	
-	/*
-	 * PRIVATE METHODS
+
+	/**
+	 * Remove discipline of period
+	 * @param ID: ID of discipline
 	 */
+	public void removeDiscipline(String ID) {
+		for (Disciplina disciplina : disciplinas) {
+			if(disciplina.getID().equals(ID)){
+				disciplinas.remove(disciplina);
+				break;
+			}
+		}
+	}
+
+	/**
+	 * get disciplines with prerequisite
+	 * @param ID: ID of discipline
+	 * @return List<String> with ID of disciplines that has the disciplina (ID) as prerequisite
+	 */
+	public List<String> getDisciplinesWithPrerequisite(String ID) {
+		List<String> retorno = new ArrayList<String>();
+		
+		for (Disciplina disciplina : disciplinas) {
+			String[] prerequisitos = disciplina.getPrerequisites();
+			for (int i = 0; i < prerequisitos.length; i++) {
+				if(prerequisitos[i].equals(ID)){
+					retorno.add(disciplina.getID());
+					break;
+				}
+			}
+		}
+		
+		return retorno;
+	}
 }
