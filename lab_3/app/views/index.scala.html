@@ -1,7 +1,110 @@
-@(message: String)
+@(plano: sistema.Plano)
 
-@main("Welcome to Play") {
+@import helper._ 
 
-    @play20.welcome(message, style = "Java")
-
+@main("Meu curso") {
+	<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav"
+		role="banner">
+		<div class="navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">Home</a>
+				</div>
+				<nav class="collapse navbar-collapse bs-navbar-collapse"
+					role="navigation">
+					<ul class="nav navbar-nav">
+						<li><a href="">Ajuda</a></li>
+						<li><a href="">Dicas</a></li>
+						<li><a href="">Overview</a></li>
+						<li class="active"><a href="">Colabore</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="">Sobre</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	
+	<br></br>
+	
+	<div class="wrapper" style="height: 100%;">
+		<div class="titulo">
+			<nome-principal>Meu Curso</nome-principal>
+		</div>
+		<br/>	
+		<div id="colunas">
+			<div id="c1" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(1)){
+					<div class="disciplina">
+						<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+						<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					</div>
+				}
+			</div>
+		
+			<div id="c2" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(2)){
+				<div class="disciplina">
+					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+				</div>
+			}
+			</div>
+			
+			<div id="c3" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(3)){
+				<div class="disciplina">
+					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+				</div>
+			}
+			</div>
+			
+			<div id="c4" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(4)){
+				<div class="disciplina">
+					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+				</div>
+			}
+			</div>
+			
+			<div id="c5" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(5)){
+				<div class="disciplina">
+					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+				</div>
+			}
+			</div>
+			
+			<div id="c6" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(6)){
+				<div class="disciplina">
+					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+				</div>
+			}
+			</div>
+			
+			<div id="c7" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(7)){
+				<div class="disciplina">
+					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+				</div>
+			}
+			</div>
+			
+			<div id="c8" class="coluna">
+				@for(disciplina <- plano.getAllocatedDisciplines(8)){
+				<div class="disciplina">
+					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+				</div>
+			}
+			</div>
+		</div>
+	</div>
 }
