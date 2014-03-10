@@ -1,4 +1,4 @@
-@(plano: sistema.Plano)
+@(plano: sistema.Plano, auxiliar: controllers.Auxiliar)
 
 @import helper._ 
 
@@ -103,8 +103,30 @@
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
 					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
 				</div>
-			}
+				}
 			</div>
+			
 		</div>
+		</div>
+		<div class="titulo">
+				<nome-principal>Disciplinas Ofertadas</nome-principal>
+		</div>
+		<script>
+			function addDisciplina(ID, period){
+				document.write ("/meuPlano/"+ID+"/"+period)
+			}
+		</script>
+		<div id="disciplinas">
+			@for(disciplina <- plano.getAllDisciplines()){
+					<div class="disciplina float-left" >
+						<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
+						<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>		
+						
+					<a href=@auxiliar.concatenaCaminho("/meuPlano/",disciplina,2)>/meuPlano/disciplina/2</a>	
+					</div>
+				
+			}				
+		</div>
+		
 	</div>
 }

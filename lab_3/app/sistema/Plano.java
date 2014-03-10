@@ -55,6 +55,7 @@ public class Plano {
 	 * @return List of allocated disciplines
 	 */
 	public List<String> getAllocatedDisciplines(int period) {
+		
 		if(listPeriodos.size() < period) return new ArrayList<String>();
 		return this.listPeriodos.get(period -1).getAllocatedDisciplines();
 	}
@@ -66,9 +67,13 @@ public class Plano {
 	 * @throws Exception if the total of credits is greater than the maximum value
 	 */
 	public void addDisciplineInPeriod(String ID, int period) throws Exception{
+
+		System.out.println(ID);
 		while(listPeriodos.size() < period){
 			listPeriodos.add(new Periodo());
 		}
+
+		System.out.println(ID);
 		for (Disciplina disciplina : listDisciplinasDisponiveis) {
 			if(ID.equals(disciplina.getID())){
 				if(!verifyValidatorPrerequisites(disciplina.getPrerequisites(), period)){
@@ -135,6 +140,7 @@ public class Plano {
 		return total;
 	}
 	
+	
 	/*
 	 * Private methods
 	 */
@@ -146,8 +152,8 @@ public class Plano {
 	 * @throws Exception if the total of credits is greater than the maximum value
 	 */
 	private void loadFirstPeriod() throws Exception{
-		String[] disciplinas = new String[]{"Cálculo 1", "Introdução a computação", 
-				"Laboratório de programação 1", "Programação 1", "Álgebra vetorial e geometria analítica"};
+		String[] disciplinas = new String[]{"Calculo 1", "Introducao a computacao", 
+				"Laboratorio de programacao 1", "Programacao 1", "Algebra vetorial e geometria analitica"};
 		for (int i = 0; i < disciplinas.length; i++) {
 			addDisciplineInPeriod(disciplinas[i], 1);
 		}
