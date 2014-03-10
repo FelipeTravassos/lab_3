@@ -36,42 +36,42 @@ public class LeitorArquivo {
 		//primeiro periodo
 		retorno.add(new String[]{"LPT","4"});
 		retorno.add("Calculo 1 - 4 - ".split(" - "));
-		retorno.add("Introducao a computacao - 4 - ".split(" - "));
-		retorno.add("Laboratorio de programacao 1 - 4 - ".split(" - "));
-		retorno.add("Programacao 1 - 4 - ".split(" - "));
-		retorno.add("Algebra vetorial e geometria analitica - 4 - ".split(" - "));
+		retorno.add("IC - 4 - ".split(" - "));
+		retorno.add("Lab Prog 1 - 4 - ".split(" - "));
+		retorno.add("Prog 1 - 4 - ".split(" - "));
+		retorno.add("Vetorial - 4 - ".split(" - "));
 		//segundo periodo
 		retorno.add("Calculo 2 - 4 - Calculo 1".split(" - "));
-		retorno.add("Matematica discreta - 4 - ".split(" - "));
-		retorno.add("Metodologia cientifica - 4 - ".split(" - "));
-		retorno.add("Programacao 2 - 4 - Programacao 1#Laboratorio de Programacao 1#Introducao a computacao".split(" - "));
-		retorno.add("Teoria dos grafos - 2 - Programacao 1#Laboratorio de Programacao 1".split(" - "));
-		retorno.add("Fisica classica - 4 - Calculo 1#algebra vetorial e geometria analitica".split(" - "));
-		retorno.add("Laboratorio de Programacao 2 - 4 - Programacao 1#Laboratorio de Programacao 1#Introducao a computacao".split(" - "));
+		retorno.add("Discreta - 4 - ".split(" - "));
+		retorno.add("Metodologia - 4 - ".split(" - "));
+		retorno.add("Prog 2 - 4 - Prog 1#Lab Prog 1#IC".split(" - "));
+		retorno.add("Grafos - 2 - Prog 1#Lab Prog 1".split(" - "));
+		retorno.add("Fisica classica - 4 - Calculo 1#Vetorial".split(" - "));
+		retorno.add("Lab Prog 2 - 4 - Prog 1#Lab Prog 1#IC".split(" - "));
 		//terceiro periodo
 		retorno.add("Probabilidade - 4 - Calculo 2".split(" - "));
-		retorno.add("Teoria da computacao - 4 - Introducao a computacao#Teoria dos grafos#Matematica discreta".split(" - "));
-		retorno.add("algebra linear - 4 - algebra vetorial e geometria analitica".split(" - "));
-		retorno.add("EDA - 4 - Teoria dos grafos#Programacao 2#Laboratorio de Programacao 2".split(" - "));
+		retorno.add("TC - 4 - IC#Grafos#Discreta".split(" - "));
+		retorno.add("linear - 4 - Vetorial".split(" - "));
+		retorno.add("EDA - 4 - Grafos#Prog 2#Lab Prog 2".split(" - "));
 		retorno.add("Fisica moderna - 4 - Calculo 2#Fisica classica".split(" - "));
-		retorno.add("Gerencia da informacao - 4 - ".split(" - "));
-		retorno.add("LEDA - 4 - Teoria dos grafos#Programacao 2#Laboratorio de Programacao 2".split(" - "));
+		retorno.add("GI - 4 - ".split(" - "));
+		retorno.add("LEDA - 4 - Grafos#Prog 2#Lab Prog 2".split(" - "));
 		//quarto periodo
-		retorno.add("Métodos estatisticos - 4 - algebra linear#Probabilidade".split(" - "));
+		retorno.add("Metodos estatisticos - 4 - linear#Probabilidade".split(" - "));
 		retorno.add("OAC - 4 - EDA#LEDA#Fisica moderna".split(" - "));
-		retorno.add("PLP - 2 - EDA#LEDA#Teoria da computacao".split(" - "));
-		retorno.add("Logica matematica - 4 - Teoria da computacao".split(" - "));
-		retorno.add("Engenharia de software 1 - 4 - Probabilidade#Programacao 2#Laboratorio de Programacao 2".split(" - "));
-		retorno.add("Sistema de informacao 1 - 4 - Gerencia da informacao".split(" - "));
+		retorno.add("PLP - 2 - EDA#LEDA#TC".split(" - "));
+		retorno.add("Logica - 4 - TC".split(" - "));
+		retorno.add("ES 1 - 4 - Probabilidade#Prog 2#Lab Prog 2".split(" - "));
+		retorno.add("SI 1 - 4 - GI".split(" - "));
 		retorno.add("LOAC - 4 - EDA#LEDA#Fisica moderna".split(" - "));
 		//quinto periodo
 		retorno.add("Infosoc - 2 - ".split(" - "));
-		retorno.add("ATAL - 4 - EDA#LEDA#Calculo 2#Logica matematica".split(" - "));
+		retorno.add("ATAL - 4 - EDA#LEDA#Calculo 2#Logica".split(" - "));
 		retorno.add("Compiladores - 4 - OAC#LOAC#PLP".split(" - "));
 		retorno.add("Rede de computadores - 4 - OAC#LOAC".split(" - "));
-		retorno.add("BD 1 - 4 - Sistema de informacao 1".split(" - "));
-		retorno.add("SI 2 - 4 - Sistema de informacao 1".split(" - "));
-		retorno.add("LES - 2 - Engenharia de software 1".split(" - "));
+		retorno.add("BD 1 - 4 - SI 1".split(" - "));
+		retorno.add("SI 2 - 4 - SI 1".split(" - "));
+		retorno.add("LES - 2 - ES 1".split(" - "));
 		//sexto periodo
 		retorno.add("Direito e cidadania - 4 - ".split(" - "));
 		retorno.add("SO - 4 - ".split(" - "));
@@ -79,7 +79,7 @@ public class LeitorArquivo {
 		retorno.add("Optativa 1 - 4 - ".split(" - "));
 		retorno.add("Laboratorio de interconecao de redes de computadores - 2 - ".split(" - "));
 		retorno.add("Optativa 2 - 4 - ".split(" - "));
-		retorno.add("Metodos de software nemericos - 4 - ".split(" - "));
+		retorno.add("Metodos de software numericos - 4 - ".split(" - "));
 		retorno.add("Avaliacao de desempenho de de sistemas discretos - 4 - ".split(" - "));
 		retorno.add("BD 2 - 4 - ".split(" - "));
 		retorno.add("IA - 4 - ".split(" - "));

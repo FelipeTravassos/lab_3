@@ -67,13 +67,9 @@ public class Plano {
 	 * @throws Exception if the total of credits is greater than the maximum value
 	 */
 	public void addDisciplineInPeriod(String ID, int period) throws Exception{
-
-		System.out.println(ID);
 		while(listPeriodos.size() < period){
 			listPeriodos.add(new Periodo());
 		}
-
-		System.out.println(ID);
 		for (Disciplina disciplina : listDisciplinasDisponiveis) {
 			if(ID.equals(disciplina.getID())){
 				if(!verifyValidatorPrerequisites(disciplina.getPrerequisites(), period)){
@@ -152,8 +148,8 @@ public class Plano {
 	 * @throws Exception if the total of credits is greater than the maximum value
 	 */
 	private void loadFirstPeriod() throws Exception{
-		String[] disciplinas = new String[]{"Calculo 1", "Introducao a computacao", 
-				"Laboratorio de programacao 1", "Programacao 1", "Algebra vetorial e geometria analitica"};
+		String[] disciplinas = new String[]{"Calculo 1", "IC", "Lab Prog 1", 
+				"Prog 1", "Vetorial"};
 		for (int i = 0; i < disciplinas.length; i++) {
 			addDisciplineInPeriod(disciplinas[i], 1);
 		}
