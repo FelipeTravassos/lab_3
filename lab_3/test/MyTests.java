@@ -4,6 +4,12 @@
  * @author FELIPE
  */
 
+/*
+ * tem testes que poderiam estar em um método para que assim o código ficasse mais limpo e menos repetitivo, mas percebi que ao colocar o asserts 
+ * em um metodo para organizar, quando ocorria um redbar ficava mais complicado de saber especificameto onde foi o erro e seu motivo, pois ele não
+ * sinaliza o teste e sim a chamada do método.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,9 +70,8 @@ public class MyTests {
 			oraculo.add(new Disciplina("Fisica classica", 4, new String[]{"Calculo 1", "Vetorial"}));
 			//Disciplina abaixo não sera adicionada por falta de cumprimento dos seus prerequisitos 
 			sistema.addDisciplineInPeriod("LEDA", 2);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-		}
+		} catch (Exception e) {		}
+		
         assertThat(26).isEqualTo(sistema.getTotalCredits(2));
 		List<String> disciplinas = sistema.getAllocatedDisciplines(2);
         assertThat(oraculo.size()).isEqualTo(disciplinas.size());
@@ -118,7 +123,6 @@ public class MyTests {
 			sistema.addDisciplineInPeriod("EDA", 10);
 			decimo.add(new Disciplina("EDA", 4, new String[]{"Grafos", "Prog 2", "Lab Prog 2"}));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -206,7 +210,6 @@ public class MyTests {
 			sistema.addDisciplineInPeriod("Calculo 2", 2);
 			segundo.add(new Disciplina("Calculo 2", 4, new String[]{"Calculo 1"}));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -234,7 +237,6 @@ public class MyTests {
 			sistema.addDisciplineInPeriod("Rede de computadores", 5);
 		
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

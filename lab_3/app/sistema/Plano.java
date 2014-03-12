@@ -73,7 +73,7 @@ public class Plano {
 		for (Disciplina disciplina : listDisciplinasDisponiveis) {
 			if(ID.equals(disciplina.getID())){
 				if(!verifyValidatorPrerequisites(disciplina.getPrerequisites(), period)){
-					throw new Exception("N�o atende pr� requisito");
+					throw new Exception("Nao atende pre requisito");
 				}
 				this.listPeriodos.get(period -1).addDiscipline(disciplina);
 				this.listDisciplinasAlocadas.add(disciplina);
@@ -135,7 +135,6 @@ public class Plano {
 		}
 		return total;
 	}
-	
 	
 	/*
 	 * Private methods
